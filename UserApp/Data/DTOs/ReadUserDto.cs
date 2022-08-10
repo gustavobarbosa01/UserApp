@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace UserApp.Models
+namespace UserApp.Data.DTOs
 {
-    public class User
+    public class ReadUserDto
     {
 		[Key]
 		[Required]

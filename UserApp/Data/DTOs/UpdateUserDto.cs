@@ -4,14 +4,10 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace UserApp.Models
+namespace UserApp.Data.DTOs
 {
-    public class User
+    public class UpdateUserDto
     {
-		[Key]
-		[Required]
-		public int Codigo { get; set; }
-
 		[Required(ErrorMessage = "O campo Nome é Obrigatório!")]
 		[StringLength(50, ErrorMessage = "O campo Nome precisa ter no máximo 50 caracteres")]
 		public string Nome { get; set; }
@@ -29,6 +25,5 @@ namespace UserApp.Models
 
 		public string Senha { get; set; }
 
-		public DateTime Date { get; set; }
 	}
 }
