@@ -26,13 +26,25 @@
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="ClientApp\src\app\NovaPasta\**" />
     <Compile Remove="Data\NovaPasta\**" />
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="ClientApp\src\app\NovaPasta\**" />
     <Content Remove="Data\NovaPasta\**" />
+    <EmbeddedResource Remove="ClientApp\src\app\NovaPasta\**" />
     <EmbeddedResource Remove="Data\NovaPasta\**" />
     <None Remove="$(SpaRoot)**" />
+    <None Remove="ClientApp\src\app\NovaPasta\**" />
     <None Remove="Data\NovaPasta\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="ClientApp\src\app\User.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\src\app\User.cs" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
@@ -62,5 +74,7 @@
       </ResolvedFileToPublish>
     </ItemGroup>
   </Target>
+
+  <ProjectExtensions><VisualStudio><UserProperties clientapp_4package_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>

@@ -1,0 +1,34 @@
+<p>list-user works!</p>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Usuários</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Nome</th>
+          <th>Cpf</th>
+          <th>Endereço</th>
+          <th>Telefone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of usuarios | async">
+          <td>{{usuario.codigo}}</td>
+          <td>{{usuario.nome}}</td>
+          <td>{{usuario.cpf}}</td>
+          <td>{{usuario.endereco}}</td>
+          <td>{{usuario.telefone}}</td>
+          <td>
+            <button (click)="userDetails(usuario.codigo)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
+            <button (click)="updateUser(usuario.codigo)" class="btn btn-info" style="margin-left: 10px">Alterar</button>
+            <button (click)="deleteUser(usuario.codigo)" class="btn btn-danger">Excluir</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

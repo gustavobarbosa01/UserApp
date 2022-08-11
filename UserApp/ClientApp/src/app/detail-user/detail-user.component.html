@@ -1,0 +1,26 @@
+<p>detail-user works!</p>
+<div class="panel-heading">
+  <h2>Detalhes do Usuário</h2>
+</div>
+<hr />
+<div *ngIf="usuario">
+  <div>
+    <label><b>Código: </b></label> {{usuario.codigo}}
+  </div>
+  <div>
+    <label><b>Nome: </b></label> {{usuario.nome}}
+  </div>
+  <div>
+    <label><b>Cpf: </b></label> {{usuario.cpf}}
+  </div>
+  <div>
+    <label><b>Endereço: </b></label> {{usuario.endereco}}
+  </div>
+  <div>
+    <label><b>Telefone: </b></label> {{usuario.telefone}}
+  </div>
+
+  <br>
+  <br>
+  <button (click)="list()" class="btn btn-primary">Retornar para Listar Todos</button>
+  <br>
