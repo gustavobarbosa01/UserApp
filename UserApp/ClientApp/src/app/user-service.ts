@@ -1,22 +1,26 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { User } from './User';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
+  private authUser: boolean = false;
   private baseUrl = 'https://localhost:5001/User';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+              private router: Router  ) { }
 
   getUser(codigo: number): Observable<any> {
     debugger
     return this.http.get(`${this.baseUrl}/${codigo}`);
   }
 
-  createProduto(usuario: Object): Observable<Object> {
+  createUser(usuario: Object): Observable<Object> {
     return this.http.post(`${this.baseUrl}`, usuario);
   }
 
@@ -31,5 +35,14 @@ export class UserService {
 
   getUserList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`);
+  }
+
+  fazerLogin(usuario: User) {
+    if (usuario.login === "SISTEMA" && usuario.senha === "candidato123") {
+      this.authUser = true;
+      this.router.navigate(['/list-user'])
+    } else {
+      this.authUser = false;
+    }
   }
 }

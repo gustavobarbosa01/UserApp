@@ -38,7 +38,7 @@ userDetails(codigo: number){
   this.router.navigate(['details', codigo]);
 }
 
-  updateUser(codigo: number){
+updateUser(codigo: number){
     this.router.navigate(['update', codigo]);
 }
 

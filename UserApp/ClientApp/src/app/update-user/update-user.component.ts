@@ -9,7 +9,7 @@ import { UserService } from '../user-service';
   styleUrls: ['./update-user.component.css']
 })
 export class UpdateUserComponent implements OnInit {
-  senha: string;
+
   codigo: number;
   usuario: User;
 
@@ -41,10 +41,6 @@ export class UpdateUserComponent implements OnInit {
 
   gotoList() {
     this.router.navigate(['/list-user']);
-  }
-
-  mostraSenha() {
-    
   }
 
 }

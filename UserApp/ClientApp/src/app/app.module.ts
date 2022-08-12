@@ -21,12 +21,11 @@ import { DetailUserComponent } from './detail-user/detail-user.component';
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
     UserComponent,
     LoginComponent,
-    ListUserComponent,
     CreateUserComponent,
+    ListUserComponent,
+    
     UpdateUserComponent,
     DetailUserComponent
   ],
@@ -35,15 +34,13 @@ import { DetailUserComponent } from './detail-user/detail-user.component';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: 'list-user', component: ListUserComponent },
+
       { path: 'sing-up', component: CreateUserComponent },
+      { path: 'sing-in', component: LoginComponent },
+      { path: 'list-user', component: ListUserComponent },
       { path: 'update/:codigo', component: UpdateUserComponent },
       { path: 'details/:codigo', component: DetailUserComponent },
-      { path: 'sing-in', component: LoginComponent },
-      { path: 'users', component: UserComponent },
       { path: '', component: HomeComponent  },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
     ]),
     
   ],
