@@ -29,6 +29,6 @@ namespace UserApp.Data.DTOs
 
 		public string Senha { get; set; }
 
-		public DateTime Date { get; set; }
+		public DateTime Date { get; set; } = DateTime.Now;
 	}
 }

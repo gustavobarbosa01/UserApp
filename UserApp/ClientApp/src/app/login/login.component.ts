@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  fazerLogin() {
+  onSubmit() {
     console.log(this.usuario);
     this.userService.fazerLogin(this.usuario);
   }

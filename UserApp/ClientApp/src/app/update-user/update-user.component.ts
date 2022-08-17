@@ -10,6 +10,7 @@ import { UserService } from '../user-service';
 })
 export class UpdateUserComponent implements OnInit {
 
+  usuarios: User[] = [];
   codigo: number;
   usuario: User;
 
@@ -41,6 +42,12 @@ export class UpdateUserComponent implements OnInit {
 
   gotoList() {
     this.router.navigate(['/list-user']);
+    
   }
 
+  reloadData() {
+    this.userService.getUserList().subscribe(
+      rel => this.usuarios = rel
+    );
+  }
 }

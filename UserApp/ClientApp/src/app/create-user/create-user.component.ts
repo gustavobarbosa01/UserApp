@@ -10,7 +10,7 @@ import { UserService } from '../user-service';
   styleUrls: ['./create-user.component.css']
 })
 export class CreateUserComponent implements OnInit {
-  usuarios: Observable<User[]>;
+  usuarios: User[] = [];
   usuario: User = new User();
   submitted = false;
 
@@ -30,20 +30,21 @@ export class CreateUserComponent implements OnInit {
       .subscribe(data => console.log(data), error => console.log(error));
     this.usuario = new User();
     this.gotoList();
+    this.reloadData();
   }
 
   onSubmit() {
     this.submitted = true;
     this.save();
-    this.reloadData();
   }
 
   gotoList() {
     this.router.navigate(['/list-user']);
-    
   }
 
   reloadData() {
-    this.usuarios = this.userService.getUserList();
+    this.userService.getUserList().subscribe(
+      rel => this.usuarios = rel
+    );
   }
 }

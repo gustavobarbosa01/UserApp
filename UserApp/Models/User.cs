@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace UserApp.Models
 {
-    public class User
-    {
+	public class User
+	{
 		[Key]
 		[Required]
 		public int Codigo { get; set; }
@@ -29,6 +29,6 @@ namespace UserApp.Models
 
 		public string Senha { get; set; }
 
-		public DateTime Date { get; set; }
+		public DateTime Date { get; set; } = DateTime.Now;
 	}
 }
