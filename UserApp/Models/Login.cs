@@ -7,5 +7,10 @@ namespace UserApp.Models
 {
     public class Login
     {
+        public string Username;
+        public string Password;
+
     }
 }
+
+User tem Username e Senha

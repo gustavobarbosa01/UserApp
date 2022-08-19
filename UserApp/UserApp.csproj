@@ -53,6 +53,7 @@
 
   <ItemGroup>
     <Compile Remove="ClientApp\src\app\User.cs" />
+    <Compile Remove="Models\Login.cs" />
   </ItemGroup>
 
   <ItemGroup>

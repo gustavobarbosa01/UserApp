@@ -1,6 +1,6 @@
 <header>
-  <nav
-    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
+  <nav 
+    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3" 
   >
     <div class="container">
       <a class="navbar-brand" [routerLink]="['/']">UserApp</a>
@@ -17,16 +17,16 @@
       </button>
       <div
         class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
-        [ngClass]="{ show: isExpanded }"
+        [ngClass]="{ show: isExpanded }" 
       >
         <ul class="navbar-nav flex-grow">
           <li class="nav-item"
               [routerLinkActive]="['link-active']"
-              [routerLinkActiveOptions]="{ exact: false }">
-            <a class="nav-link text-dark" [routerLink]="['/']" *ngIf="mostra">Home</a>
+              >
+            <a class="nav-link text-dark" [routerLink]="['/']" *ngIf="mostraMenu" >Home</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/list-user']" *ngIf="mostra">Usuários</a>
+            <a class="nav-link text-dark" [routerLink]="['/list-user']" *ngIf="mostraMenu" >Usuários</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
             <a class="nav-link text-dark" [routerLink]="['/sing-up']">Cadastrar-se</a>

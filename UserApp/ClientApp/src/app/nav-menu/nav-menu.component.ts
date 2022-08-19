@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from '../user-service';
 
 @Component({
   selector: 'app-nav-menu',
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
 export class NavMenuComponent {
 
   isExpanded = false;
-  mostra: boolean = false;
+  mostraMenu: boolean = false;
 
   collapse() {
     this.isExpanded = true;
@@ -18,5 +19,10 @@ export class NavMenuComponent {
     this.isExpanded = !this.isExpanded;
   }
 
+  constructor(private userService: UserService) {
 
+    this.userService.mostrarMenuEmitter.subscribe(
+      mostrar => this.mostraMenu = mostrar
+    );
+  }
 }
