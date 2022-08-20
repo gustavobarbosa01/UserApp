@@ -17,8 +17,12 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.usuario);
-    this.userService.fazerLogin(this.usuario);
     
+    this.userService.fazerLogin(this.usuario);
+    console.log(this.usuario);
+  }
+
+  fazerLogin(usuario: User) {
+
   }
 }
